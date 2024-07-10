@@ -1,11 +1,8 @@
 import express from 'express'
-import { config } from 'dotenv'
+import { PORT } from './config'
 
 const app = express()
 app.use(express.json())
-
-config()
-const PORT = process.env.PORT ?? '3000'
 
 app.get('/sapo', (_, res) => {
   res.send('Hello World')
